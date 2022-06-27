@@ -51,6 +51,7 @@ function playRound(playerSelection, computerSelection) {
 
 // Set DOM events
 const scoreChoice = document.getElementById('scoreChoice');
+const scoreMessage = document.getElementById('scoreMessage');
 const playerScoreDisp = document.getElementById('playerScore');
 const computerScoreDisp = document.getElementById('computerScore');
 const rockBtn = document.getElementById('rockBtn');
@@ -62,7 +63,7 @@ rockBtn.addEventListener('click', () => {
     playerSelection = 'rock';
     const computerSelection = computerPlay();
     playRound(playerSelection, computerSelection);
-    score();
+    updateScore();
     console.log(playerSelection);
     console.log(computerSelection);
 });
@@ -70,7 +71,7 @@ paperBtn.addEventListener('click', () => {
     playerSelection = 'paper';
     const computerSelection = computerPlay();
     playRound(playerSelection, computerSelection);
-    score();
+    updateScore();
     console.log(playerSelection);
     console.log(computerSelection);
 });
@@ -78,13 +79,13 @@ scissorsBtn.addEventListener('click', () => {
     playerSelection = 'scissors';
     const computerSelection = computerPlay();
     playRound(playerSelection, computerSelection);
-    score();
+    updateScore();
     console.log(playerSelection);
     console.log(computerSelection);
 });
 
 // Adjusts the score
-function score() {
+function updateScore() {
     if (roundResult === 'tie') {
         scoreChoice.textContent = 'It\'s a tie!';
     } else if (roundResult === 'player') {
@@ -95,13 +96,9 @@ function score() {
 
     playerScoreDisp.textContent = `Player: ${playerScore}`;
     computerScoreDisp.textContent = `Computer ${computerScore}`;
-//         console.log(`You chose: ${playerSelection}, Computer chose: ${computerSelection}.`);
-//         console.log(roundResult);
-
-//         console.log(`Player Score: ${playerScore}`);
-//         console.log(`Computer Score: ${computerScore}`);
-//     }
 }
+
+function updateScoreMessage
 // Write new function called game(). Call the playRound function inside
 // of this one to play 5 round game that keeps score and reports winner
 // or loser at the end.
