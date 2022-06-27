@@ -63,6 +63,7 @@ rockBtn.addEventListener('click', () => {
     playerSelection = 'rock';
     const computerSelection = computerPlay();
     playRound(playerSelection, computerSelection);
+    updateScoreMessage(roundResult, playerSelection, computerSelection);
     updateScore();
     console.log(playerSelection);
     console.log(computerSelection);
@@ -71,6 +72,7 @@ paperBtn.addEventListener('click', () => {
     playerSelection = 'paper';
     const computerSelection = computerPlay();
     playRound(playerSelection, computerSelection);
+    updateScoreMessage(roundResult, playerSelection, computerSelection);
     updateScore();
     console.log(playerSelection);
     console.log(computerSelection);
@@ -79,6 +81,7 @@ scissorsBtn.addEventListener('click', () => {
     playerSelection = 'scissors';
     const computerSelection = computerPlay();
     playRound(playerSelection, computerSelection);
+    updateScoreMessage(roundResult, playerSelection, computerSelection);
     updateScore();
     console.log(playerSelection);
     console.log(computerSelection);
@@ -98,7 +101,15 @@ function updateScore() {
     computerScoreDisp.textContent = `Computer ${computerScore}`;
 }
 
-function updateScoreMessage
+function updateScoreMessage(roundResult, playerSelection, computerSelection) {
+    if (roundResult === 'player') {
+        scoreMessage.textContent = (`Your ${playerSelection} beats the computer's ${computerSelection}!`);
+    } if (roundResult === 'computer') {
+        scoreMessage.textContent = (`The computer's ${computerSelection} beat your ${playerSelection}...`);
+    } if (roundResult === 'tie') {
+        scoreMessage.textContent = (`You both chose ${playerSelection}... It's a tie!?`)
+    }
+}
 // Write new function called game(). Call the playRound function inside
 // of this one to play 5 round game that keeps score and reports winner
 // or loser at the end.
