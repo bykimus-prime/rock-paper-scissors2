@@ -14,9 +14,8 @@ function computerPlay() {
     } else {
         return 'scissors';
     }
-} let computerSelection = computerPlay();
+}
 
-console.log(computerSelection);
 // Write function that plays single round. Return string that declares winner of round.
 
 function playRound(playerSelection, computerSelection) {
@@ -44,33 +43,45 @@ function playRound(playerSelection, computerSelection) {
         computerScore++;
         round++;
         roundResult = 'computer'
-    } else {
+    } if (playerSelection === computerSelection) {
         round++;
         roundResult = 'tie';
-    } console.log(roundResult)
+    }
 }
 
+// Set DOM events
 const scoreChoice = document.getElementById('scoreChoice');
 const rockBtn = document.getElementById('rockBtn');
 const paperBtn = document.getElementById('paperBtn');
 const scissorsBtn = document.getElementById('scissorsBtn');
 
+// Make buttons do things
 rockBtn.addEventListener('click', () => {
     playerSelection = 'rock';
+    const computerSelection = computerPlay();
+    playRound(playerSelection, computerSelection);
     score();
     console.log(playerSelection);
+    console.log(computerSelection);
 });
 paperBtn.addEventListener('click', () => {
     playerSelection = 'paper';
+    const computerSelection = computerPlay();
+    playRound(playerSelection, computerSelection);
     score();
     console.log(playerSelection);
+    console.log(computerSelection);
 });
 scissorsBtn.addEventListener('click', () => {
     playerSelection = 'scissors';
+    const computerSelection = computerPlay();
+    playRound(playerSelection, computerSelection);
     score();
     console.log(playerSelection);
+    console.log(computerSelection);
 });
 
+// Adjusts the score
 function score() {
     if (roundResult === 'tie') {
         scoreChoice.textContent = 'It\'s a tie!';
