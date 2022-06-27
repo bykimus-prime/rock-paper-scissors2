@@ -51,6 +51,8 @@ function playRound(playerSelection, computerSelection) {
 
 // Set DOM events
 const scoreChoice = document.getElementById('scoreChoice');
+const playerScoreDisp = document.getElementById('playerScore');
+const computerScoreDisp = document.getElementById('computerScore');
 const rockBtn = document.getElementById('rockBtn');
 const paperBtn = document.getElementById('paperBtn');
 const scissorsBtn = document.getElementById('scissorsBtn');
@@ -90,6 +92,9 @@ function score() {
     } else if (roundResult === 'computer') {
         scoreChoice.textContent = 'You lost!';
     }
+
+    playerScoreDisp.textContent = `Player: ${playerScore}`;
+    computerScoreDisp.textContent = `Computer ${computerScore}`;
 //         console.log(`You chose: ${playerSelection}, Computer chose: ${computerSelection}.`);
 //         console.log(roundResult);
 
