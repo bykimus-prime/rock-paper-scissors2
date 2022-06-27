@@ -1,8 +1,9 @@
 let playerScore = 0;
 let computerScore = 0;
 let round = 0;
+let roundResult = '';
 
-// // Write function called computerPlay that randomly returns rock, paper, or scissors.
+// Write function called computerPlay that randomly returns rock, paper, or scissors.
 
 function computerPlay() {
     const janken = Math.floor(Math.random() * 3);
@@ -16,56 +17,75 @@ function computerPlay() {
 } let computerSelection = computerPlay();
 
 console.log(computerSelection);
-// // Write function that plays single round. Return string that declares winner of round.
+// Write function that plays single round. Return string that declares winner of round.
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock' && computerSelection === 'scissors') {
         playerScore++;
         round++;
-        return 'You win! Rock beats scissors.';
+        roundResult = 'player';
     } if (playerSelection === 'paper' && computerSelection === 'rock') {
         playerScore++;
         round++;
-        return 'You win! Paper beats rock.';
+        roundResult = 'player';
     } if (playerSelection === 'scissors' && computerSelection === 'paper') {
         playerScore++;
         round++;
-        return 'You win! Scissors beats paper.';
+        roundResult = 'player';
     } if (computerSelection === 'rock' && playerSelection === 'scissors') {
         computerScore++;
         round++;
-        return 'You lose! Rock beats scissors.';
+        roundResult = 'computer';
     } if (computerSelection === 'paper' && playerSelection === 'rock') {
         computerScore++;
         round++;
-        return 'You lose! Paper beats rock';
+        roundResult = 'computer';
     } if (computerSelection === 'scissors' && playerSelection === 'paper') {
         computerScore++;
         round++;
-        return 'You lose! Scissors beats paper.'
+        roundResult = 'computer'
     } else {
         round++;
-        return 'It\'s a tie! You both chose the same.';
-    }
+        roundResult = 'tie';
+    } console.log(roundResult)
 }
 
+const scoreChoice = document.getElementById('scoreChoice');
 const rockBtn = document.getElementById('rockBtn');
 const paperBtn = document.getElementById('paperBtn');
 const scissorsBtn = document.getElementById('scissorsBtn');
 
 rockBtn.addEventListener('click', () => {
     playerSelection = 'rock';
+    score();
     console.log(playerSelection);
 });
 paperBtn.addEventListener('click', () => {
     playerSelection = 'paper';
+    score();
     console.log(playerSelection);
 });
 scissorsBtn.addEventListener('click', () => {
     playerSelection = 'scissors';
+    score();
     console.log(playerSelection);
 });
 
+function score() {
+    if (roundResult === 'tie') {
+        scoreChoice.textContent = 'It\'s a tie!';
+    } else if (roundResult === 'player') {
+        scoreChoice.textContent = 'You won!';
+    } else if (roundResult === 'computer') {
+        scoreChoice.textContent = 'You lost!';
+    }
+//         console.log(`You chose: ${playerSelection}, Computer chose: ${computerSelection}.`);
+//         console.log(roundResult);
+
+//         console.log(`Player Score: ${playerScore}`);
+//         console.log(`Computer Score: ${computerScore}`);
+//     }
+}
 // Write new function called game(). Call the playRound function inside
 // of this one to play 5 round game that keeps score and reports winner
 // or loser at the end.
