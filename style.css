@@ -11,15 +11,44 @@
     text-align: center;
 }
 
+#rockBtn {
+    background-image: url('./imgs/everything_everywhere_allAtOnce.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+}
 
+#paperBtn {
+    background-image: url('./imgs/octopus-crafts-paper.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+}
 
+#scissorsBtn {
+    background-image: url('./imgs/scissors_ikea.jpg');
+    background-size: cover;
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+}
 
 .buttons {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
+
+.scores-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
