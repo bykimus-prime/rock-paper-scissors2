@@ -49,6 +49,30 @@
     justify-content: space-between;
 }
 
+.scorebox {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+#playerChoice {
+    background-image: url(./imgs/mariokart_box.png);
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+}
+
+#computerChoice {
+    background-image: url(./imgs/mariokart_box.png);
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
