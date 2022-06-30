@@ -55,32 +55,21 @@ const computerScoreDisp = document.getElementById('computerScore');
 const rockBtn = document.getElementById('rockBtn');
 const paperBtn = document.getElementById('paperBtn');
 const scissorsBtn = document.getElementById('scissorsBtn');
+const modal = document.getElementById('modal');
 
-// Make buttons do things, part of this can be put into a different function to save space later
-rockBtn.addEventListener('click', () => {
-    playerSelection = 'rock';
+// When clicking buttons sends them to function
+rockBtn.addEventListener('click', () => clickAction('rock'));
+paperBtn.addEventListener('click', () => clickAction('paper'));
+scissorsBtn.addEventListener('click', () => clickAction('scissors'));
+
+// Makes buttons do things
+function clickAction(playerSelection) {
     const computerSelection = computerPlay();
     playRound(playerSelection, computerSelection);
     updateScoreMessage(roundResult, playerSelection, computerSelection);
     updateScore();
     updateChoiceImg(playerSelection, computerSelection);
-});
-paperBtn.addEventListener('click', () => {
-    playerSelection = 'paper';
-    const computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
-    updateScoreMessage(roundResult, playerSelection, computerSelection);
-    updateScore();
-    updateChoiceImg(playerSelection, computerSelection);
-});
-scissorsBtn.addEventListener('click', () => {
-    playerSelection = 'scissors';
-    const computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
-    updateScoreMessage(roundResult, playerSelection, computerSelection);
-    updateScore();
-    updateChoiceImg(playerSelection, computerSelection);
-});
+}
 
 // Updates choice pictures
 function updateChoiceImg(playerSelection, computerSelection) {
