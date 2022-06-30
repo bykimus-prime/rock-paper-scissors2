@@ -73,7 +73,7 @@ paperBtn.addEventListener('click', () => {
     playRound(playerSelection, computerSelection);
     updateScoreMessage(roundResult, playerSelection, computerSelection);
     updateScore();
-    updateChoiceImg();
+    updateChoiceImg(playerSelection, computerSelection);
 });
 scissorsBtn.addEventListener('click', () => {
     playerSelection = 'scissors';
@@ -81,7 +81,7 @@ scissorsBtn.addEventListener('click', () => {
     playRound(playerSelection, computerSelection);
     updateScoreMessage(roundResult, playerSelection, computerSelection);
     updateScore();
-    updateChoiceImg();
+    updateChoiceImg(playerSelection, computerSelection);
 });
 
 // Updates choice pictures
