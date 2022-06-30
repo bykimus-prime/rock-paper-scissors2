@@ -65,6 +65,7 @@ rockBtn.addEventListener('click', () => {
     playRound(playerSelection, computerSelection);
     updateScoreMessage(roundResult, playerSelection, computerSelection);
     updateScore();
+    updateChoiceImg(playerSelection, computerSelection);
     console.log(playerSelection);
     console.log(computerSelection);
 });
@@ -74,6 +75,7 @@ paperBtn.addEventListener('click', () => {
     playRound(playerSelection, computerSelection);
     updateScoreMessage(roundResult, playerSelection, computerSelection);
     updateScore();
+    updateChoiceImg();
     console.log(playerSelection);
     console.log(computerSelection);
 });
@@ -83,10 +85,38 @@ scissorsBtn.addEventListener('click', () => {
     playRound(playerSelection, computerSelection);
     updateScoreMessage(roundResult, playerSelection, computerSelection);
     updateScore();
+    updateChoiceImg();
     console.log(playerSelection);
     console.log(computerSelection);
 });
 
+// Updates choice pictures
+
+function updateChoiceImg(playerSelection, computerSelection) {
+    switch (playerSelection) {
+        case 'rock':
+            document.getElementById('playerChoice').style.backgroundImage = 'url(./imgs/everything_everywhere_allAtOnce.jpg)';
+            break;
+        case 'paper':
+            document.getElementById('playerChoice').style.backgroundImage = 'url(./imgs/octopus-crafts-paper.jpg)';
+            break;
+        case 'scissors':
+            document.getElementById('playerChoice').style.backgroundImage = 'url(./imgs/scissors_ikea.jpg)';
+            break;
+    }
+
+    switch (computerSelection) {
+        case 'rock':
+            document.getElementById('computerChoice').style.backgroundImage = 'url(./imgs/everything_everywhere_allAtOnce.jpg)';
+            break;
+        case 'paper':
+            document.getElementById('computerChoice').style.backgroundImage = 'url(./imgs/octopus-crafts-paper.jpg)';
+            break;
+        case 'scissors':
+            document.getElementById('computerChoice').style.backgroundImage = 'url(./imgs/scissors_ikea.jpg)';
+            break;
+    }
+}
 // Adjusts the score
 function updateScore() {
     if (roundResult === 'tie') {
@@ -110,6 +140,7 @@ function updateScoreMessage(roundResult, playerSelection, computerSelection) {
         scoreMessage.textContent = (`You both chose ${playerSelection}... It's a tie!?`)
     }
 }
+
 // Write new function called game(). Call the playRound function inside
 // of this one to play 5 round game that keeps score and reports winner
 // or loser at the end.
