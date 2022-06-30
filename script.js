@@ -121,6 +121,7 @@ function updateScore() {
 
     playerScoreDisp.textContent = `Player: ${playerScore}`;
     computerScoreDisp.textContent = `Computer ${computerScore}`;
+    roundCount.textContent = `Round: ${round}`;
 }
 
 function updateScoreMessage(roundResult, playerSelection, computerSelection) {
