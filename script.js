@@ -71,7 +71,7 @@ function clickAction(playerSelection) {
     updateChoiceImg(playerSelection, computerSelection);
 
     if (playerScore === 5 || computerScore === 5) {
-        endgameModal.style.display = 'block';
+        endgameModal.style.display = 'block'; // opens the modal
     }
 }
 
