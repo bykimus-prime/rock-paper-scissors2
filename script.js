@@ -66,8 +66,6 @@ rockBtn.addEventListener('click', () => {
     updateScoreMessage(roundResult, playerSelection, computerSelection);
     updateScore();
     updateChoiceImg(playerSelection, computerSelection);
-    console.log(playerSelection);
-    console.log(computerSelection);
 });
 paperBtn.addEventListener('click', () => {
     playerSelection = 'paper';
@@ -76,8 +74,6 @@ paperBtn.addEventListener('click', () => {
     updateScoreMessage(roundResult, playerSelection, computerSelection);
     updateScore();
     updateChoiceImg();
-    console.log(playerSelection);
-    console.log(computerSelection);
 });
 scissorsBtn.addEventListener('click', () => {
     playerSelection = 'scissors';
@@ -86,8 +82,6 @@ scissorsBtn.addEventListener('click', () => {
     updateScoreMessage(roundResult, playerSelection, computerSelection);
     updateScore();
     updateChoiceImg();
-    console.log(playerSelection);
-    console.log(computerSelection);
 });
 
 // Updates choice pictures
