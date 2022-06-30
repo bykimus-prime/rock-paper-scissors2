@@ -55,7 +55,7 @@ const computerScoreDisp = document.getElementById('computerScore');
 const rockBtn = document.getElementById('rockBtn');
 const paperBtn = document.getElementById('paperBtn');
 const scissorsBtn = document.getElementById('scissorsBtn');
-const modal = document.getElementById('modal');
+const endgameModal = document.getElementById('endgameModal');
 
 // When clicking buttons sends them to function
 rockBtn.addEventListener('click', () => clickAction('rock'));
@@ -69,6 +69,10 @@ function clickAction(playerSelection) {
     updateScoreMessage(roundResult, playerSelection, computerSelection);
     updateScore();
     updateChoiceImg(playerSelection, computerSelection);
+
+    if (playerScore === 5 || computerScore === 5) {
+        endgameModal.style.display = 'block';
+    }
 }
 
 // Updates choice pictures
