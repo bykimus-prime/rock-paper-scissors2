@@ -63,7 +63,7 @@ const restartBtn = document.getElementById('restartBtn');
 rockBtn.addEventListener('click', () => clickAction('rock'));
 paperBtn.addEventListener('click', () => clickAction('paper'));
 scissorsBtn.addEventListener('click', () => clickAction('scissors'));
-restartBtn.addEventListener('click', () => restartGame);
+restartBtn.addEventListener('click', () => restartGame());
 
 // Makes buttons do things
 function clickAction(playerSelection) {
@@ -135,10 +135,10 @@ function updateScoreMessage(roundResult, playerSelection, computerSelection) {
     }
 }
 
-function restartGame {
+function restartGame() {
     playerScore = 0;
     computerScore = 0;
-    round = 0;
+    roundCount.textContent = 'Round: 0';
     scoreChoice.textContent = 'Make your choice';
     scoreMessage.textContent = 'First to 5 points wins';
     playerScoreDisp.textContent = 'Player: 0';
