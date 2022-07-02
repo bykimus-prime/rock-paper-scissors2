@@ -1,11 +1,18 @@
 html {
-    background-color: grey;
+    background-color: lightslategrey;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
 
 .header {
     display: flex;
     justify-content: center;
+    background-color: darkslategray;
+    color: goldenrod;
 }
 
 .main {
@@ -14,6 +21,50 @@ html {
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+#roundCount {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.scores-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.scorebox {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.choice {
+    background-image: url(./imgs/mariokart_box.png);
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+.score {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.btn {
+    border: 1px solid black;
+    cursor: pointer;
 }
 
 #rockBtn {
@@ -42,40 +93,13 @@ html {
     border-radius: 20px;
 }
 
-.buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
+.btn:hover {
+    box-shadow: 0 0 20px 5px lightgoldenrodyellow;
 }
 
-.scores-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.scorebox {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-}
-
-#playerChoice {
-    background-image: url(./imgs/mariokart_box.png);
-    background-size: cover;
-    background-position: center;
-    height: 150px;
-    width: 150px;
-    border-radius: 20px;
-}
-
-#computerChoice {
-    background-image: url(./imgs/mariokart_box.png);
-    background-size: cover;
-    background-position: center;
-    height: 150px;
-    width: 150px;
-    border-radius: 20px;
+.btn:active {
+    box-shadow: 0 0 20px 5px lightgreen;
+    border: 2px solid lightgreen;
 }
 
 .footer {
@@ -86,6 +110,8 @@ html {
     align-items: center;
     justify-content: center;
     width: 100%;
+    background-color: darkslategrey;
+    color: goldenrod;
 }
 
 #endgameModal { /* this is the modal background actually */
@@ -96,15 +122,35 @@ html {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* enable scroll if needed */
-    background-color: rgb(0,0,0); /* fallback color */
     background-color: rgba(0,0,0,0.4) /* black with opacity */
 }
 
 #modalBox {
-    background-color: white;
-    margin: 15% auto; /*15% from top and centered */
-    padding: 20px;
-    border: 1px solid grey;
-    width: 80%; /* can be more or less, depending on screen size */
+    text-align: center;
+    width: 320px;
+    height: 140px;
+    margin: 220px auto; /* margin from top and centered */
+    background-color: lightcyan;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#restartBtn {
+    background-color: lightgoldenrodyellow;
+    height: 40px;
+    width: 150px;
+    margin-top: 20px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#restartBtn:hover {
+    background-color: gold;
+}
+
+#restartBtn:active {
+    background-color: goldenrod;
 }
