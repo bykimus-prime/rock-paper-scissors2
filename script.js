@@ -50,18 +50,20 @@ function playRound(playerSelection, computerSelection) {
 // Set DOM events
 const scoreChoice = document.getElementById('scoreChoice');
 const scoreMessage = document.getElementById('scoreMessage');
-const playerScoreDisp = document.getElementById('playerScore');
-const computerScoreDisp = document.getElementById('computerScore');
+const playerScoreDisp = document.getElementById('playerScoreDisp');
+const computerScoreDisp = document.getElementById('computerScoreDisp');
 const rockBtn = document.getElementById('rockBtn');
 const paperBtn = document.getElementById('paperBtn');
 const scissorsBtn = document.getElementById('scissorsBtn');
 const endgameModal = document.getElementById('endgameModal');
 const endgameMessage = document.getElementById('endgameMessage');
+const restartBtn = document.getElementById('restartBtn');
 
 // When clicking buttons sends them to function
 rockBtn.addEventListener('click', () => clickAction('rock'));
 paperBtn.addEventListener('click', () => clickAction('paper'));
 scissorsBtn.addEventListener('click', () => clickAction('scissors'));
+restartBtn.addEventListener('click', () => restartGame);
 
 // Makes buttons do things
 function clickAction(playerSelection) {
@@ -131,4 +133,17 @@ function updateScoreMessage(roundResult, playerSelection, computerSelection) {
     } if (roundResult === 'tie') {
         scoreMessage.textContent = (`You both chose ${playerSelection}... It's a tie!?`)
     }
+}
+
+function restartGame {
+    playerScore = 0;
+    computerScore = 0;
+    round = 0;
+    scoreChoice.textContent = 'Make your choice';
+    scoreMessage.textContent = 'First to 5 points wins';
+    playerScoreDisp.textContent = 'Player: 0';
+    computerScoreDisp.textContent = 'Computer: 0';
+    document.getElementById('playerChoice').style.backgroundImage = 'url(./imgs/mariokart_box.png)';
+    document.getElementById('computerChoice').style.backgroundImage = 'url(./imgs/mariokart_box.png)';
+    endgameModal.style.display = 'none';
 }
