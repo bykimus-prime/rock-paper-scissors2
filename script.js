@@ -17,31 +17,21 @@ function computerPlay() {
 
 // Plays a round, returns string that declares winner of round
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection === 'rock' && computerSelection === 'scissors') {
+    if ((playerSelection === 'rock' && computerSelection === 'scissors') ||
+        (playerSelection === 'paper' && computerSelection === 'rock') ||
+        (playerSelection === 'scissors' && computerSelection === 'paper')) {
         playerScore++;
         round++;
         roundResult = 'player';
-    } if (playerSelection === 'paper' && computerSelection === 'rock') {
-        playerScore++;
-        round++;
-        roundResult = 'player';
-    } if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        playerScore++;
-        round++;
-        roundResult = 'player';
-    } if (computerSelection === 'rock' && playerSelection === 'scissors') {
+    }
+    if ((computerSelection === 'rock' && playerSelection === 'scissors') ||
+        (computerSelection === 'paper' && playerSelection === 'rock') ||
+        (computerSelection === 'scissors' && playerSelection === 'paper')) {
         computerScore++;
         round++;
         roundResult = 'computer';
-    } if (computerSelection === 'paper' && playerSelection === 'rock') {
-        computerScore++;
-        round++;
-        roundResult = 'computer';
-    } if (computerSelection === 'scissors' && playerSelection === 'paper') {
-        computerScore++;
-        round++;
-        roundResult = 'computer'
-    } if (playerSelection === computerSelection) {
+    }
+    if (playerSelection === computerSelection) {
         round++;
         roundResult = 'tie';
     }
