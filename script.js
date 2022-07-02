@@ -56,6 +56,7 @@ const rockBtn = document.getElementById('rockBtn');
 const paperBtn = document.getElementById('paperBtn');
 const scissorsBtn = document.getElementById('scissorsBtn');
 const endgameModal = document.getElementById('endgameModal');
+const endgameMessage = document.getElementById('endgameMessage');
 
 // When clicking buttons sends them to function
 rockBtn.addEventListener('click', () => clickAction('rock'));
@@ -72,6 +73,11 @@ function clickAction(playerSelection) {
 
     if (playerScore === 5 || computerScore === 5) {
         endgameModal.style.display = 'block'; // opens the modal
+        if (playerScore > computerScore) {
+            endgameMessage.textContent = 'You won! You beat the computer!';
+        } else {
+            endgameMessage.textContent = 'You lost! The computer beat you.'
+        }
     }
 }
 
